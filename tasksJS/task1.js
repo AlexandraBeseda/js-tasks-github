@@ -146,6 +146,29 @@ function doubleChar(str) {
     return str.split("").map(w=>w.repeat(2)).join("");
 }
 
+//----Regexp----//
+//Тут проблема, я никогда не пользовалась шаблонными выражениями, в этом месте у меня 0 знаний.
+
+//1 Do you speak "English"?
+//https://www.codewars.com/kata/58dbdccee5ee8fa2f9000058
+function spEng(sentence){
+    let sent = sentence.toLowerCase();
+    return sent.includes('english');
+}
+
+//2 Lario and Muigi Pipe Problem
+//Objects task 1
+
+//3 Grasshopper - Summation
+//https://www.codewars.com/kata/55d24f55d7dd296eb9000030
+var summation = function (num) {
+    let sum=0;
+    for (let i = 1; i <=num; i++) {
+        sum+=i;
+    }
+    return sum;
+}
+
 //----Functions----//
 
 //1 The 'if' function
@@ -270,7 +293,6 @@ function well(x){
                count++;
            }
        }
-   
        if (count>2){
            return  'I smell a series!';
        }
