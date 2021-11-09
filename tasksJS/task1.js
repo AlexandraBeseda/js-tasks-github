@@ -19,7 +19,7 @@ function nameShuffler(str) {
 
 function sumMix(x) {
   let sum = 0;
-  for (const i = 0; i < x.length; i++) {
+  for (let i = 0; i < x.length; i++) {
     sum = sum + Number(x[i]);
   }
   return sum;
@@ -32,8 +32,9 @@ function sumMix(x) {
 //30 минут
 function multiTable(number) {
   let res = "";
-  for (const i = 1; i <= 10; i++) {
-    res += `${i} * ${number} = ${i * number}${i < 10 ? "\n" : ""}`;
+  const END = 10;
+  for (let i = 1; i <= END; i++) {
+    res += `${i} * ${number} = ${i * number}${i < END ? "\n" : ""}`;
   }
   return res;
 }
@@ -49,10 +50,10 @@ function removeChar(str) {
 //https://www.codewars.com/kata/57eadb7ecd143f4c9c0000a3
 
 function abbrevName(name) {
-  const arrayFirstLettersOfNames = name.toUpperCase().split(" ");
-  let firstLetterName = arrayFirstLettersOfNames[0];
-  let firstLetterSurname = arrayFirstLettersOfNames[1];
-  return `${firstLetterName[0]}.${firstLetterSurname[0]}`;
+  const NAMES = name.toUpperCase().split(" ");
+  const FIRST_NAME = NAMES[0];
+  const LAST_NAME = NAMES[1];
+  return `${FIRST_NAME[0]}.${LAST_NAME[0]}`;
 }
 
 //7 Convert a string to an array
@@ -77,7 +78,7 @@ function countPositivesSumNegatives(input) {
   } else {
     let pozitiveNum = 0;
     let negativeSum = 0;
-    for (const i = 0; i < input.length; i++) {
+    for (let i = 0; i < input.length; i++) {
       if (input[i] > 0) {
         pozitiveNum++;
       } else negativeSum += input[i];
@@ -102,7 +103,7 @@ function countSheeps(arrayOfSheep) {
 //https://www.codewars.com/kata/5513795bd3fafb56c200049e
 function countBy(x, n) {
   let z = [];
-  for (const i = 1; i <= n; ++i) {
+  for (let i = 1; i <= n; ++i) {
     z.push(i * x);
   }
   return z;
@@ -116,14 +117,18 @@ function countBy(x, n) {
 function logicalCalc(array, op) {
   let result = array[0];
   for (let i = 1; i < array.length; i++) {
-    if (op == "AND") {
-      result = result && array[i];
-    }
-    if (op == "OR") {
-      result = result || array[i];
-    }
-    if (op == "XOR") {
-      result = result != array[i];
+    switch (op) {
+      case "AND":
+        result = result && array[i];
+        break;
+
+      case "OR":
+        result = result || array[i];
+        break;
+
+      default:
+        result = result != array[i];
+        break;
     }
   }
   return result;
@@ -153,8 +158,8 @@ function doubleChar(str) {
 //1 Do you speak "English"?
 //https://www.codewars.com/kata/58dbdccee5ee8fa2f9000058
 function spEng(sentence) {
-  let sent = sentence.toLowerCase();
-  return sent.includes("english");
+  const SENT = sentence.toLowerCase();
+  return SENT.includes("english");
 }
 
 //2 Lario and Muigi Pipe Problem
