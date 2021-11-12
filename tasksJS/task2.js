@@ -48,8 +48,8 @@ class Ball {
 //4 Crash Override
 //https://www.codewars.com/kata/578c1e2edaa01a9a02000b7f
 //This task was in task1.js, I just changed a bit
-var firstName = { A: "Alpha", B: "Beta", C: "Cache" };
-var surname = { A: "Analogue", B: "Bomb", C: "Catalyst" };
+let firstName = { A: "Alpha", B: "Beta", C: "Cache" };
+let surname = { A: "Analogue", B: "Bomb", C: "Catalyst" };
 
 function aliasGen(firstname, lastname) {
   const FIRST_NAME = firstname[0].toUpperCase();
@@ -92,7 +92,7 @@ function arithmetic(a, b, operator) {
 //https://www.codewars.com/kata/582746fa14b3892727000c4f
 function countDevelopers(list) {
   return list.filter(
-    (elem) => elem.continent === "Europe" && elem.language == "JavaScript"
+    (elem) => elem.continent === "Europe" && elem.language === "JavaScript"
   ).length;
 }
 
@@ -125,9 +125,9 @@ const greet = (lang) => LANGUAGES[lang] || "Welcome";
 //https://www.codewars.com/kata/56b29582461215098d00000f
 //I propose 3d solution for this task
 function pipeFix(numbers) {
-  let max = Math.max(...numbers);
-  let min = Math.min(...numbers);
-  return new Array(max - min + 1)
-    .fill(min)
+  const MAX = Math.max(...numbers);
+  const MIN = Math.min(...numbers);
+  return new Array(MAX - MIN + 1)
+    .fill(MIN)
     .map((element, index) => element + index);
 }
